@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class login {
 
-    public Main executarlogin(){
+    public Usuario executarlogin(){
 
         Scanner scanner = new Scanner(System.in);
 
@@ -20,7 +20,8 @@ public class login {
         String Password = scanner.nextLine();
 
 
-        return new Usuario(executarlogin());
+
+        return new Usuario(Email, Password);
     }
 
 

@@ -5,11 +5,15 @@ public class Usuario {
     private String nome;
     private int cpf;
     private String data_Nascimento;
-    private String email;
+    private String emailUser;
     private String password;
     private int cep;
     private int n_Endereco;
     private int n_Ctt;
+
+    public Usuario(String email, String password) {
+
+    }
 
     public String getNome() {
         return nome;
@@ -33,10 +37,10 @@ public class Usuario {
     }
 
     public String getEmail() {
-        return email;
+        return emailUser;
     }
     public void setEmail(String email){
-        this.email = email;
+        this.emailUser = email;
     }
 
     public String getPassword() {

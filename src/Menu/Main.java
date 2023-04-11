@@ -14,23 +14,26 @@ public class Main {
 
         System.out.println("Seja bem vindo ao BANCO TIGAS \n");
 
-        System.out.println("Ainda não tem conta no nosso banco? \n" +
-                            "Digite ( 1 ) para criar sua conta \n" +
-                            "Digite ( 2 ) caso ja tenha conta ");
-        int escolha = scanner.nextInt();
+        int escolha = 0;
 
-        switch (escolha){
-            case 1:
-                cadastroDeUser.executarCadastro_De_User();
-                break;
-            case 2:
-                Login.executarlogin();
-                break;
+        do {
+            System.out.println("Caso não tenha cadastro no nosso banco, Digite ( 1 ) \n" +
+                    "Caso já tenha cadastro no nosso banco, Digite ( 2 )");
 
-        }
+             escolha = scanner.nextInt();
+
+            switch (escolha) {
+                case 1:
+                    cadastroDeUser.executarCadastro_De_User();
+                    break;
+                case 2:
+                    Login.executarlogin();
+                    break;
+
+            }
+
+        }while ( escolha != 99);
+
 
     }
-
-
-
 }
