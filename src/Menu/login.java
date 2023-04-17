@@ -16,7 +16,7 @@ public class login {
         System.out.println("Digite seu email e senha para entrar na sua conta: ");
 
         System.out.println("Email: ");
-        String Email = scanner.nextLine();
+        String Email = scanner.next();
 
         System.out.println("Senha: ");
         String Password = scanner.next();
