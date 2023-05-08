@@ -16,6 +16,7 @@ public class Cliente {
         counter += 1;
     }
 
+
     public String getName() {
         return name;
     }

@@ -25,12 +25,12 @@ public class BancoTigas {
         System.out.println("----------Bem vindo ao Banco Tigas ----------");
         System.out.println("---------------------------------------------");
         System.out.println("----Selecione a Opção que deseja realizar----");
-        System.out.println("---------------------------------------------");
-        System.out.println("| Opção 1 ---------- Criar conta ---------- |");
-        System.out.println("| Opção 2 ------------ Depositar ---------- |");
-        System.out.println("| Opção 3 -------------- Sacar ------------ |");
-        System.out.println("| Opção 4 ------------ Transferir --------- |");
-        System.out.println("| Opção 5 -------------- Listar ----------- |");
+        System.out.println("---------------------------------------------\n");
+        System.out.println("| Opção 1 ---------- Criar conta ---------- |\n");
+        System.out.println("| Opção 2 ------------ Depositar ---------- |\n");
+        System.out.println("| Opção 3 -------------- Sacar ------------ |\n");
+        System.out.println("| Opção 4 ------------ Transferir --------- |\n");
+        System.out.println("| Opção 5 -------------- Listar ----------- |\n");
         System.out.println("| Opção 6 --------------- Sair ------------ |");
         System.out.println("---------------------------------------------");
 
@@ -68,13 +68,13 @@ public class BancoTigas {
 
     public static void CriarConta() {
 
-        System.out.println("\nNome: ");
+        System.out.println("\nDigite o nome como você quer que apareça: ");
         String Nome = scan.next();
 
-        System.out.println("\nCPF: ");
+        System.out.println("\nDigite seu CPF: ");
         String CPF = scan.next();
 
-        System.out.println("\nEmail: ");
+        System.out.println("\nDigite seu Email: ");
         String Email = scan.next();
 
         Cliente cliente = new Cliente(Nome, CPF, Email);
