@@ -68,8 +68,11 @@ public class BancoTigas {
 
     public static void CriarConta() {
 
-        System.out.println("\nDigite o nome como você quer que apareça: ");
-        String Nome = scan.next();
+        System.out.println("\nDigite seu primeiro nome: ");
+        String nameP = scan.next();
+
+        System.out.println("\nDigite seu ultimo sobrenome: ");
+        String nameU = scan.next();
 
         System.out.println("\nDigite seu CPF: ");
         String CPF = scan.next();
@@ -77,7 +80,20 @@ public class BancoTigas {
         System.out.println("\nDigite seu Email: ");
         String Email = scan.next();
 
-        Cliente cliente = new Cliente(Nome, CPF, Email);
+        System.out.println("\nDigite a sua idade: ");
+        String Idade = scan.next();
+
+        System.out.println("\nDigite o primeiro nome da mãe: ");
+        String NomeMaeP = scan.next();
+
+        System.out.println("\nDigite o ultimo sobrenome da mãe");
+        String NomeMaeU = scan.next();
+
+
+
+
+
+        Cliente cliente = new Cliente(nameP, nameU, Idade, CPF, Email, NomeMaeP,NomeMaeU );
 
         ContaBancaria conta = new ContaBancaria(cliente);
         contasBancarias.add(conta);
@@ -137,30 +153,91 @@ public class BancoTigas {
         }
         Operacoes();
 
+
     }
 
     public static void Transferir() {
 
-        System.out.println("Número da conta do remetente: ");
-        int NumContaRemet = scan.nextInt();
+        System.out.println("---Qual tipo de transferencia você deseja realizar?--- ");
+        System.out.println("| Opção 1 -------Pix-------|\n");
+        System.out.println("| Opção 2 -------Doc-------|\n");
+        System.out.println("| Opção 3 -------Ted-------|\n");
+        int op = scan.nextInt();
 
-        ContaBancaria contaRemetente = EncontrarConta(NumContaRemet);
+        switch (op){
+            case 1:
+                System.out.println("Número da conta do remetente: ");
+                int NumContaRemet = scan.nextInt();
 
-        if (contaRemetente != null) {
-            System.out.println("Número da conta do destinatário: ");
-            int NumContaDest = scan.nextInt();
+                ContaBancaria contaRemetente = EncontrarConta(NumContaRemet);
 
-            ContaBancaria contaDest = EncontrarConta(NumContaDest);
+                if (contaRemetente != null) {
+                    System.out.println("Número da conta do destinatário: ");
+                    int NumContaDest = scan.nextInt();
 
-            if (contaDest != null) {
-                System.out.println("Valor da transferência: ");
-                double valor = scan.nextDouble();
+                    ContaBancaria contaDest = EncontrarConta(NumContaDest);
 
-                contaRemetente.Transferir(contaDest, valor);
+                    if (contaDest != null) {
+                        System.out.println("Valor da transferência: ");
+                        double valor = scan.nextDouble();
 
-            }
+                        contaRemetente.Transferir(contaDest, valor);
+
+                    }
+                }
+                Operacoes();
+                break;
+
+            case 2:
+                System.out.println("Número da conta do remetente: ");
+                int NumContRemet = scan.nextInt();
+
+                ContaBancaria contRemetente = EncontrarConta(NumContRemet);
+
+                if (contRemetente != null) {
+                    System.out.println("Número da conta do destinatário: ");
+                    int NumContaDest = scan.nextInt();
+
+                    ContaBancaria contaDest = EncontrarConta(NumContaDest);
+
+                    if (contaDest != null) {
+                        System.out.println("Valor da transferência: ");
+                        double valor = scan.nextDouble();
+
+                        double VT = valor - 15;
+
+                        contRemetente.Transferir(contaDest, VT);
+
+                    }
+                }
+                Operacoes();
+                break;
+            case 3:
+                System.out.println("Número da conta do remetente: ");
+                int NuContRemet = scan.nextInt();
+
+                ContaBancaria conRemetente = EncontrarConta(NuContRemet);
+
+                if (conRemetente != null) {
+                    System.out.println("Número da conta do destinatário: ");
+                    int NumContaDest = scan.nextInt();
+
+                    ContaBancaria conDest = EncontrarConta(NumContaDest);
+
+                    if (conDest != null) {
+                        System.out.println("Valor da transferência: ");
+                        double valor = scan.nextDouble();
+
+                        double VT1 = valor - 10;
+
+                        conRemetente.Transferir(conDest, VT1);
+
+                    }
+                }
+                Operacoes();
         }
-        Operacoes();
+
+
 
     }
 

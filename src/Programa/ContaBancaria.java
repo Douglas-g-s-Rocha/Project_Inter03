@@ -42,9 +42,14 @@ public class ContaBancaria {
     }
 
     public String toString(){
+
+
+
         return "\nNúmero da conta: " + this.getNumber() +
-                "\nNome: " + this.cliente.getName() +
+                "\nNome: " + this.cliente.getNameP() + " " + this.cliente.getNameU() +
+                "\nIdade: " + this.cliente.getIdade() +
                 "\nCPF: " + this.cliente.getCPF() +
+                "\nNome da mãe: " + this.cliente.getNomeMaeP() + " " + this.cliente.getNomeMaeU() +
                 "\nEmail: " + this.cliente.getEmail() +
                 "\nSaldo: " + Utils.DoubleToString(this.getSaldo()) +
                 "\n";
